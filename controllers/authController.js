@@ -20,13 +20,14 @@ const signup = (req, res, next) => {
 	}
 	const username = req.body.username.toLowerCase();
 	const password = req.body.password;
+	const email = req.body.email.toLowerCase();
 
 	User.findOne({ username })
 	.then((user) => {
 		if (user) {
 			return res.status(422).send({ error: 'Username is taken.' });
 		}
-		const newUser = new User({ username, password });
+		const newUser = new User({ username, email, password });
 		newUser.save()
 		.then(() => {
 			res.status(200)
