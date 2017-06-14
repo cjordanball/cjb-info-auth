@@ -8,7 +8,7 @@ case 'test':
 	PORT = process.env.PORT || 3142;
 	break;
 case 'production':
-	DB_PATH = 'mongodb://';
+	DB_PATH = 'mongodb://localhost/cjballInfoDB';
 	PORT = process.env.PORT || 3142;
 	break;
 default:

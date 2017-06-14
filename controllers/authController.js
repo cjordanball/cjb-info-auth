@@ -44,7 +44,15 @@ const signin = (req, res) => {
 	});
 };
 
+const test = (req, res) => {
+	console.log('intest');
+	res.status(200).json({
+		status: 'okay!'
+	});
+};
+
 module.exports = {
 	signup,
-	signin
+	signin,
+	test
 };
