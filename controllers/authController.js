@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const jwt = require('jwt-simple');
-const config = require('../config/config');
 const secrets = require('../config/secrets');
 const User = require('../models/users');
 
@@ -44,23 +43,7 @@ const signin = (req, res) => {
 	});
 };
 
-const toast = (req, res) => {
-	console.log('intest');
-	res.status(200).json({
-		status: 'okay!'
-	});
-};
-
-const plaintest = (req, res) => {
-	console.log('intest3');
-	res.status(200).json({
-		status: 'okay3!'
-	});
-};
-
 module.exports = {
 	signup,
-	signin,
-	toast,
-	plaintest
+	signin
 };

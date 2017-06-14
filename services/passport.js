@@ -4,7 +4,6 @@ const User = require('../models/users');
 
 const localOptions = { usernameField: 'username' };
 const localLogin = new LocalStrategy(localOptions, (username, password, done) => {
-	console.log('USER: ', username);
 	User.findOne({ username })
 	.then((user) => {
 		if (!user) {

@@ -1,6 +1,7 @@
 const ENVIRONMENT = process.env.NODE_ENV;
 let DB_PATH;
 let PORT;
+const VERSION = '0.0.1';
 
 switch (ENVIRONMENT) {
 case 'test':
@@ -18,5 +19,6 @@ default:
 
 module.exports = {
 	DB_PATH,
-	PORT
+	PORT,
+	VERSION
 };
