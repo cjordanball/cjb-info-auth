@@ -44,15 +44,23 @@ const signin = (req, res) => {
 	});
 };
 
-const test = (req, res) => {
+const toast = (req, res) => {
 	console.log('intest');
 	res.status(200).json({
 		status: 'okay!'
 	});
 };
 
+const plaintest = (req, res) => {
+	console.log('intest3');
+	res.status(200).json({
+		status: 'okay3!'
+	});
+};
+
 module.exports = {
 	signup,
 	signin,
-	test
+	toast,
+	plaintest
 };
