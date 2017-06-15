@@ -14,12 +14,13 @@ const tokenForUser = (user) => {
 };
 
 const signup = (req, res, next) => {
+	console.log('in signup');
 	if (!req.body.username || !req.body.password) {
 		res.status(422).send({ error: 'Must submit a username and password!' });
 	}
 	const username = req.body.username.toLowerCase();
 	const password = req.body.password;
-	const email = req.body.email.toLowerCase();
+	const email = req.body.email ? req.body.email.toLowerCase() : null;
 
 	User.findOne({ username })
 	.then((user) => {
